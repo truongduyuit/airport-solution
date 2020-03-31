@@ -43,7 +43,12 @@ namespace AirPort
 
         public void RemovePassengerAtIndex(int index)
         {
-            if (passengers.Count > index) passengers.RemoveAt(index);
+            if (passengers.Count > index)
+            {
+                passengers.RemoveAt(index);
+
+                System.GC.Collect();
+            }
         }
 
         public Passenger GetPassengerAtIndex(int index)

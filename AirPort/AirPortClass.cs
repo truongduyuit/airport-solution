@@ -27,27 +27,36 @@ namespace AirPort
 
         public void CountDownProcessTime()
         {
-            for (int i =0; i < gates.Count; i++)
+            for (int i = 0; i < gates.Count; i++)
             {
-                gates[i].CountDownProcess();
+                if (gates[i].passengers.Count > 0) gates[i].CountDownProcess();
             }
         }
 
         public void RandomPassenger()
         {
-            Passenger passenger = new Passenger();
+            int count = 0;
+            gates.ForEach(delegate (Gate gate)
+            {
+                count += gate.passengers.Count;
+            });
+           
+            if (count < 24)
+            {
+                Passenger passenger = new Passenger();
 
-            if (passenger.type == Constand.CUSTOMER_TYPE_LIST[0])
-            {
-                gates[0].AddPassenger(passenger);
-            }
-            else if (passenger.type == Constand.CUSTOMER_TYPE_LIST[1])
-            {
-                gates[1].AddPassenger(passenger);
-            }
-            else
-            {
-                gates[2].AddPassenger(passenger);
+                if (passenger.type == Constand.CUSTOMER_TYPE_LIST[0])
+                {
+                    gates[0].AddPassenger(passenger);
+                }
+                else if (passenger.type == Constand.CUSTOMER_TYPE_LIST[1])
+                {
+                    gates[1].AddPassenger(passenger);
+                }
+                else
+                {
+                    gates[2].AddPassenger(passenger);
+                }
             }
         }
 
@@ -81,12 +90,12 @@ namespace AirPort
         {
             if (b.passengers.Count == 0 && c.passengers.Count == 0) return;
 
-            if (b.passengers.Count >= c.passengers.Count)
+            if (b.passengers.Count >= c.passengers.Count && b.passengers.Count > 1)
             {
                 a.passengers.Add(b.GetPassengerAtIndex(Constand.PASSENGER_INDEX_TRANFER));
                 b.RemovePassengerAtIndex(Constand.PASSENGER_INDEX_TRANFER);
             }
-            else
+            else if (c.passengers.Count > 1)
             {
                 a.passengers.Add(c.GetPassengerAtIndex(Constand.PASSENGER_INDEX_TRANFER));
                 c.RemovePassengerAtIndex(Constand.PASSENGER_INDEX_TRANFER);

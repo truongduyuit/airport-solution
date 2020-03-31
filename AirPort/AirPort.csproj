@@ -52,18 +52,18 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Constand.cs" />
-    <Compile Include="frmMain.cs">
+    <Compile Include="frm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="frm.Designer.cs">
+      <DependentUpon>frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Gate.cs" />
     <Compile Include="Passenger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="frm.resx">
+      <DependentUpon>frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,11 +89,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="images\background.jpg" />
-    <Content Include="images\man1.png" />
-    <Content Include="images\man_2.png" />
-    <Content Include="images\women_1.png" />
-    <Content Include="images\women_2.png" />
+    <Content Include="images\11.png" />
+    <Content Include="images\22.png" />
+    <Content Include="images\33.png" />
+    <Content Include="images\gate_a.png" />
+    <Content Include="images\gate_b.png" />
+    <Content Include="images\gate_c.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

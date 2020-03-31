@@ -23,10 +23,13 @@ namespace AirPort
         //  2 : Normal
         public static List<string> CUSTOMER_TYPE_LIST = new List<string> { "Business", "Online", "Normal"  };
 
-        public static int PASSENGER_AVATAR_SIZE_X = 75;
-        public static int PASSENGER_AVATAR_SIZE_Y = 75;
+        public static int PASSENGER_AVATAR_SIZE_X = 60;
+        public static int PASSENGER_AVATAR_SIZE_Y = 60;
 
 
         public static int PASSENGER_INDEX_TRANFER = 2;
+        public static int PASSENGER_SHOW_MAX = 3;
+
+        public static int LOOP_TIME = 1000;
     }
 }

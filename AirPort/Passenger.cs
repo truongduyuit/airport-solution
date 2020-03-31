@@ -19,35 +19,20 @@ namespace AirPort
             if (random < Constand.BUSINESS_COSTOMER_RANDOM_PERCENT)
             {
                 type = Constand.CUSTOMER_TYPE_LIST[0];
+                avatar = @"\images\11.png";
             }
 
-            else if (random >= Constand.BUSINESS_COSTOMER_RANDOM_PERCENT && 
-                        random < Constand.ONLINE_CUSTOMER_RANDOM_PERCENT)
+            else if (random >= Constand.BUSINESS_COSTOMER_RANDOM_PERCENT &&
+                        random < Constand.ONLINE_CUSTOMER_RANDOM_PERCENT + Constand.BUSINESS_COSTOMER_RANDOM_PERCENT)
             {
                 type = Constand.CUSTOMER_TYPE_LIST[1];
-            }   
-            
+                avatar = @"\images\22.png";
+            }
+
             else
             {
                 type = Constand.CUSTOMER_TYPE_LIST[2];
-            }    
-
-            // random avatar
-            if (random % 4 == 0)
-            {
-                avatar = @"\images\man1.png";
-            }
-            else if(random % 4 == 1)
-            {
-                avatar = @"\images\man_2.png";
-            }
-            else if (random % 4 == 2)
-            {
-                avatar = @"\images\women_1.png";
-            }
-            else
-            {
-                avatar = @"\images\women_2.png";
+                avatar = @"\images\33.png";
             }
         }
     }
